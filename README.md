@@ -5,7 +5,7 @@ demonstrate the capabilities of Flutter
 
 <p align="center">
   <a href='https://i.imgur.com/z3FJSe7.mp4'>
-    <img src='https://github.com/AlaaAlShammaa/LoginRtlView/demo.gif' width=320>
+    <img src='https://github.com/AlaaAlShammaa/LoginRtlView/blob/master/demo.gif' width=320>
   </a>
 </p>
 
