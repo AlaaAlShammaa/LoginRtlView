@@ -18,6 +18,7 @@ Follow the install instructions [here](https://pub.dev/packages/login_rtl#-insta
 
 Property |   Type     | Desciption
 -------- |------------| ---------------
+isLanguageArabic |   `Boolean`     | <sub>if you set this value to true the whole UI will turn into RTL mode with arabic language support</sub>
 onSignup |   `AuthCallback`     | <sub>Called when the user hit the submit button when in sign up mode</sub>
 onLogin |   `AuthCallback`     | <sub>Called when the user hit the submit button when in login mode</sub>
 onRecoverPassword |   `RecoverCallback`     | <sub>Called when the user hit the submit button when in recover password mode</sub>
