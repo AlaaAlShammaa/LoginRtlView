@@ -68,7 +68,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: LoginRtlView(
-        isLanguageArabic: true,
+        isLayoutRtl: true,
         onLogin: _authUser,
         title: "",
         logo: "assets/images/social.png",

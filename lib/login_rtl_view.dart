@@ -223,7 +223,7 @@ class __HeaderState extends State<_Header> {
 }
 
 class LoginRtlView extends StatefulWidget {
-  var isLanguageArabic;
+  var isLayoutRtl;
 
   LoginRtlView({
     Key key,
@@ -240,7 +240,7 @@ class LoginRtlView extends StatefulWidget {
     this.logoTag,
     this.titleTag,
     this.showDebugButtons = false,
-    this.isLanguageArabic = false,
+    this.isLayoutRtl = false,
   }) : super(key: key);
 
   /// Called when the user hit the submit button when in sign up mode
@@ -583,7 +583,7 @@ class _LoginRtlViewState extends State<LoginRtlView>
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
-          value: widget.messages ?? widget.isLanguageArabic
+          value: widget.messages ?? widget.isLayoutRtl
               ? rtlLoginMessages
               : LoginMessages(),
         ),
@@ -622,7 +622,7 @@ class _LoginRtlViewState extends State<LoginRtlView>
                           passwordValidator: passwordValidator,
                           onSubmit: _reverseHeaderAnimation,
                           onSubmitCompleted: widget.onSubmitAnimationCompleted,
-                          rtlSupport: widget.isLanguageArabic),
+                          rtlSupport: widget.isLayoutRtl),
                     ),
                     Positioned(
                       top: cardTopPosition - headerHeight - headerMargin,
