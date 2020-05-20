@@ -8,11 +8,37 @@ void main() {
 }
 
 const users = const {
-  'dribbble@gmail.com': '12345',
-  'hunter@gmail.com': 'hunter',
+  'alaa@gmail.com': '12345',
+  'test@gmail.com': 'test',
 };
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+          accentColor: _colorFromHex("#FF989A"),
+          cursorColor: _colorFromHex("#FF989A"),
+          textTheme: TextTheme(
+            display2: TextStyle(
+              fontFamily: 'OpenSans',
+              fontSize: 45.0,
+              color: _colorFromHex("#FF989A"),
+            ),
+            button: TextStyle(
+              fontFamily: 'OpenSans',
+            ),
+            subhead: TextStyle(fontFamily: 'NotoSans'),
+            body1: TextStyle(fontFamily: 'NotoSans'),
+          ),
+        ),
+        home: new Home());
+  }
+}
+
+class Home extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2250);
 
   Future<String> _authUser(LoginData data) {
@@ -38,42 +64,23 @@ class MyApp extends StatelessWidget {
     });
   }
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.teal,
-          accentColor: _colorFromHex("#FF989A"),
-          cursorColor: _colorFromHex("#FF989A"),
-          textTheme: TextTheme(
-            display2: TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 45.0,
-              color: _colorFromHex("#FF989A"),
-            ),
-            button: TextStyle(
-              fontFamily: 'OpenSans',
-            ),
-            subhead: TextStyle(fontFamily: 'NotoSans'),
-            body1: TextStyle(fontFamily: 'NotoSans'),
-          ),
-        ),
-        home: Center(
-          child: LoginRtlView(
-            isLanguageArabic: true,
-            onLogin: _authUser,
-            title: "",
-            logo: "assets/images/icons8-user-100.png",
-            onRecoverPassword: _recoverPassword,
-            onSignup: _authUser,
-            onSubmitAnimationCompleted: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => DashboardScreen(),
-              ));
-            },
-          ),
-        ));
+    return Center(
+      child: LoginRtlView(
+        isLanguageArabic: true,
+        onLogin: _authUser,
+        title: "",
+        logo: "assets/images/social.png",
+        onRecoverPassword: _recoverPassword,
+        onSignup: _authUser,
+        onSubmitAnimationCompleted: () {
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) => new DashboardScreen(),
+          ));
+        },
+      ),
+    );
   }
 }
 
